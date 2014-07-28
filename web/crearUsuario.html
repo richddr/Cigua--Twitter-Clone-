@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Crear Usuario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Crear Usuario</div>
+        <form name="formCrearUsuario" action="./cu" method="POST" enctype="multipart/form-data">
+            Username: <input type="text" value="" name="username"/><br>
+            Password: <input type="password" value="" name="password"/><br>
+            Nombre: <input type="text" value="" name="nombre"/><br>
+            Apellido: <input type="text" value="" name="apellido"/><br>
+            Fecha Nacimiento: <input type="date" value="" name="fechaNacimiento"/><br>
+            Foto Usuario: <input type="file" name="fotoUsuario"/><br>
+            <input type="submit" value="Crear Usuario"/><br>
+        </form>
+    </body>
+</html>

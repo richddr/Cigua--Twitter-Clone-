@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://webservices.parcial2.pw.pucmm.edu/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="CiguaWS" targetNamespace="http://webservices.parcial2.pw.pucmm.edu/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/parcial2_grupo1_Microblogging/CiguaWS?xsd=1" namespace="http://webservices.parcial2.pw.pucmm.edu/" />
+    </xsd:schema>
+  </types>
+  <message name="getImage">
+    <part name="parameters" element="tns:getImage" />
+  </message>
+  <message name="getImageResponse">
+    <part name="parameters" element="tns:getImageResponse" />
+  </message>
+  <message name="getUser">
+    <part name="parameters" element="tns:getUser" />
+  </message>
+  <message name="getUserResponse">
+    <part name="parameters" element="tns:getUserResponse" />
+  </message>
+  <message name="authenticateUser">
+    <part name="parameters" element="tns:authenticateUser" />
+  </message>
+  <message name="authenticateUserResponse">
+    <part name="parameters" element="tns:authenticateUserResponse" />
+  </message>
+  <message name="getTweetsByUser">
+    <part name="parameters" element="tns:getTweetsByUser" />
+  </message>
+  <message name="getTweetsByUserResponse">
+    <part name="parameters" element="tns:getTweetsByUserResponse" />
+  </message>
+  <message name="crearTweet">
+    <part name="parameters" element="tns:crearTweet" />
+  </message>
+  <message name="crearTweetResponse">
+    <part name="parameters" element="tns:crearTweetResponse" />
+  </message>
+  <message name="FileNotFoundException">
+    <part name="fault" element="tns:FileNotFoundException" />
+  </message>
+  <message name="IOException">
+    <part name="fault" element="tns:IOException" />
+  </message>
+  <message name="getUserByTweetId">
+    <part name="parameters" element="tns:getUserByTweetId" />
+  </message>
+  <message name="getUserByTweetIdResponse">
+    <part name="parameters" element="tns:getUserByTweetIdResponse" />
+  </message>
+  <message name="getCantTweets">
+    <part name="parameters" element="tns:getCantTweets" />
+  </message>
+  <message name="getCantTweetsResponse">
+    <part name="parameters" element="tns:getCantTweetsResponse" />
+  </message>
+  <message name="getFollowingCount">
+    <part name="parameters" element="tns:getFollowingCount" />
+  </message>
+  <message name="getFollowingCountResponse">
+    <part name="parameters" element="tns:getFollowingCountResponse" />
+  </message>
+  <message name="getFollowersCount">
+    <part name="parameters" element="tns:getFollowersCount" />
+  </message>
+  <message name="getFollowersCountResponse">
+    <part name="parameters" element="tns:getFollowersCountResponse" />
+  </message>
+  <portType name="CiguaWS">
+    <operation name="getImage">
+      <input wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getImageRequest" message="tns:getImage" />
+      <output wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getImageResponse" message="tns:getImageResponse" />
+    </operation>
+    <operation name="getUser">
+      <input wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getUserRequest" message="tns:getUser" />
+      <output wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getUserResponse" message="tns:getUserResponse" />
+    </operation>
+    <operation name="authenticateUser">
+      <input wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/authenticateUserRequest" message="tns:authenticateUser" />
+      <output wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/authenticateUserResponse" message="tns:authenticateUserResponse" />
+    </operation>
+    <operation name="getTweetsByUser">
+      <input wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getTweetsByUserRequest" message="tns:getTweetsByUser" />
+      <output wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getTweetsByUserResponse" message="tns:getTweetsByUserResponse" />
+    </operation>
+    <operation name="crearTweet">
+      <input wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/crearTweetRequest" message="tns:crearTweet" />
+      <output wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/crearTweetResponse" message="tns:crearTweetResponse" />
+      <fault wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/crearTweet/Fault/FileNotFoundException" name="FileNotFoundException" message="tns:FileNotFoundException" />
+      <fault wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/crearTweet/Fault/IOException" name="IOException" message="tns:IOException" />
+    </operation>
+    <operation name="getUserByTweetId">
+      <input wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getUserByTweetIdRequest" message="tns:getUserByTweetId" />
+      <output wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getUserByTweetIdResponse" message="tns:getUserByTweetIdResponse" />
+    </operation>
+    <operation name="getCantTweets">
+      <input wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getCantTweetsRequest" message="tns:getCantTweets" />
+      <output wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getCantTweetsResponse" message="tns:getCantTweetsResponse" />
+    </operation>
+    <operation name="getFollowingCount">
+      <input wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getFollowingCountRequest" message="tns:getFollowingCount" />
+      <output wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getFollowingCountResponse" message="tns:getFollowingCountResponse" />
+    </operation>
+    <operation name="getFollowersCount">
+      <input wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getFollowersCountRequest" message="tns:getFollowersCount" />
+      <output wsam:Action="http://webservices.parcial2.pw.pucmm.edu/CiguaWS/getFollowersCountResponse" message="tns:getFollowersCountResponse" />
+    </operation>
+  </portType>
+  <binding name="CiguaWSPortBinding" type="tns:CiguaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getImage">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="authenticateUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTweetsByUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearTweet">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="FileNotFoundException">
+        <soap:fault use="literal" name="FileNotFoundException" namespace="" />
+      </fault>
+      <fault name="IOException">
+        <soap:fault use="literal" name="IOException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getUserByTweetId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCantTweets">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFollowingCount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFollowersCount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CiguaWS">
+    <port name="CiguaWSPort" binding="tns:CiguaWSPortBinding">
+      <soap:address location="http://localhost:8080/parcial2_grupo1_Microblogging/CiguaWS" />
+    </port>
+  </service>
+</definitions>

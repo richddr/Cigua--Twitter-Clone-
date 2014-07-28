@@ -1,0 +1,5 @@
+/build/
+/dist/
+/src/conf/persistence.xml
+/RestClient/RestCiguaClient/RestCiguaClient/bin/Debug/
+/RestClient/RestCiguaClient/RestCiguaClient/obj/

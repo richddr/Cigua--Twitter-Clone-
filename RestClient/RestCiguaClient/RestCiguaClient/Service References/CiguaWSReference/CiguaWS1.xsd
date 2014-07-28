@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservices.parcial2.pw.pucmm.edu/" targetNamespace="http://webservices.parcial2.pw.pucmm.edu/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="FileNotFoundException" type="tns:FileNotFoundException" />
+  <xs:element name="IOException" type="tns:IOException" />
+  <xs:element name="authenticateUser" type="tns:authenticateUser" />
+  <xs:element name="authenticateUserResponse" type="tns:authenticateUserResponse" />
+  <xs:element name="crearTweet" type="tns:crearTweet" />
+  <xs:element name="crearTweetResponse" type="tns:crearTweetResponse" />
+  <xs:element name="getCantTweets" type="tns:getCantTweets" />
+  <xs:element name="getCantTweetsResponse" type="tns:getCantTweetsResponse" />
+  <xs:element name="getFollowersCount" type="tns:getFollowersCount" />
+  <xs:element name="getFollowersCountResponse" type="tns:getFollowersCountResponse" />
+  <xs:element name="getFollowingCount" type="tns:getFollowingCount" />
+  <xs:element name="getFollowingCountResponse" type="tns:getFollowingCountResponse" />
+  <xs:element name="getImage" type="tns:getImage" />
+  <xs:element name="getImageResponse" type="tns:getImageResponse" />
+  <xs:element name="getTweetsByUser" type="tns:getTweetsByUser" />
+  <xs:element name="getTweetsByUserResponse" type="tns:getTweetsByUserResponse" />
+  <xs:element name="getUser" type="tns:getUser" />
+  <xs:element name="getUserByTweetId" type="tns:getUserByTweetId" />
+  <xs:element name="getUserByTweetIdResponse" type="tns:getUserByTweetIdResponse" />
+  <xs:element name="getUserResponse" type="tns:getUserResponse" />
+  <xs:element name="tweet" type="tns:tweet" />
+  <xs:element name="usuario" type="tns:usuario" />
+  <xs:complexType name="getUserByTweetId">
+    <xs:sequence>
+      <xs:element name="tweetId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUserByTweetIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellido" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fotoUsuario" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearTweet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contenido" type="xs:string" />
+      <xs:element minOccurs="0" name="imagenNombre" type="xs:string" />
+      <xs:element minOccurs="0" name="imagen" nillable="true" type="xs:base64Binary" />
+      <xs:element name="isPublic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearTweetResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FileNotFoundException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IOException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFollowersCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFollowersCountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="authenticateUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="authenticateUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFollowingCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFollowingCountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTweetsByUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTweetsByUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tweet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tweet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contenido" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="idUsuario" type="tns:usuario" />
+      <xs:element minOccurs="0" name="imagen" type="xs:string" />
+      <xs:element minOccurs="0" name="isPublic" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="imageRoute" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getImageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCantTweets">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCantTweetsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
