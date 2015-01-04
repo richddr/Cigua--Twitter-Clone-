@@ -12,6 +12,7 @@ The technologies seen in this project are:
   -JavaScript
   -JEE 1.7
 Database used in project is H2.
+Main focus was on back end core functionality more than front end and UI.
 
 Cigua is a (NetBeans Java Web Project)
 For the Soap & Rest Web Services, a client was developed in C# WPF (Windows Presentation Foundation) that works with both SOAP and REST. Client allows a user to tweet (Enviar ciguas) and view his/her timeline.
